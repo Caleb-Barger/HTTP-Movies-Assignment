@@ -99,7 +99,40 @@ body {
   background-color: lightskyblue;
 }
 
+.add-movie-button {
+  padding: 5px 10px;
+  background-color: lightsteelblue;
+  position: absolute;
+  right: 100px;
+}
+
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.add-movie-wrapper {
+  position: relative;
+  width: 75%;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.add-movie-wrapper label {
+  margin: .2%;
+}
+
+.add-movie-wrapper button {
+  border: 1px solid black;
+  background-color: none;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+.add-movie-wrapper button:hover {
+  background-color: lightsteelblue;
+  color: white;
 }
