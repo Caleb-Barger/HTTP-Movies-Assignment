@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
@@ -13,15 +13,15 @@ const initalState = {
 const UpdateMovie = props => {
     // get the movie from the array passed into this component
     const [movie, setMovie] = useState(initalState)
-    const {id} = useParams()
-    const {push} = useHistory()
+    const { id } = useParams()
+    const { push } = useHistory()
 
-    const {movieList, setMovieList} = props
+    const { movieList, setMovieList } = props
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/movies/${id}`)
             .then(res => setMovie(res.data))
-            .catch(err => console.log({err}))
+            .catch(err => console.log({ err }))
     }, [id])
 
     const handleChange = e => {
@@ -42,11 +42,10 @@ const UpdateMovie = props => {
                         item = res.data
                     }
                 })
-                setMovieList(movielListClone)
 
+                setMovieList(movielListClone)
+                props.setUpdateMe(props.updateMe + 1)
                 push('/')
-            
-                
             })
     }
 
@@ -54,19 +53,19 @@ const UpdateMovie = props => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input 
+                <input
                     type="text"
                     name="title"
                     value={movie.title}
                     onChange={handleChange}
                 />
-                <input 
+                <input
                     type="text"
                     name="director"
                     value={movie.director}
                     onChange={handleChange}
                 />
-                <input 
+                <input
                     type="number"
                     name="metascore"
                     value={movie.metascore}
@@ -79,7 +78,7 @@ const UpdateMovie = props => {
                     onChange={handleChange}
                 /> */}
                 <button>Update Entry</button>
-                
+
             </form>
         </>
     )

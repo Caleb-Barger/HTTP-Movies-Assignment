@@ -75,6 +75,20 @@ body {
   background-color: lightcoral;
 }
 
+.delete-button {
+  position: absolute;
+  top: 25px;
+  right: 220px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightpink;
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: white;
+}
+
 .edit-button:hover {
   background-color: green;
   color: white;
